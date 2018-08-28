@@ -44,10 +44,20 @@ You should see something like this:
 
 ## Usage
 
-Obtain an API key [here](https://api.data.gov/signup/). When you have a key, initialize an OpenFEC client like this:
+Obtain an API key [here](https://api.data.gov/signup/). When you have a key, you can initialize an OpenFEC client in one of two ways:
 
 ```javascript
 openfec.init('your-api-key');
+```
+or you can use the method included in the [examples](examples) directory:
+
+```javascript
+openfec.init(process.argv[2]);
+```
+For those unfamiliar with shell scripting, argv[] allows you to accept command line parameters as script input. The example above would allow you to provide the API key during command line instantiation, like this:
+
+```bash
+node example/get-candidate.js YOUR_API_KEY_HERE
 ```
 
 ## Examples
