@@ -4,8 +4,42 @@ Wrapper for the OpenFEC API. Documentation for this API can be found [here](http
 
 ## Installation
 
+Pre-requisites: node >=6.9.1
+
+For our purposes here we will be cloning from Github (the version in the npm repository has problems). This assumes we will be managing the application from the directory /opt/api/
+
 ```
-npm install openfec
+mkdir /opt/api/node_modules/
+cd /opt/api/node_modules/
+git clone https://github.com/jwieder/openfec.git
+cd onfec/
+npm install
+```
+Use mocha to test the installation 
+
+```
+npm test
+```
+You should see something like this:
+
+```
+
+> openfec@0.8.5 test /XXX/node_modules/openfec
+> mocha -u exports test/*
+
+  OpenFEC Client Library
+    #Initiatize
+      ✓ Throw an error if API key not passed in call to initialize (86ms)
+    #GetCandidates
+      ✓ Makes an API call to the Candidates endpoint
+    #GetCommittees
+      ✓ Makes an API call to the Committees endpoint
+    #GetReports
+      ✓ Makes an API call to the Reports endpoint
+    #GetSchedules
+      ✓ Makes an API call to the Schdules endpoint
+
+  5 passing (167ms)
 ```
 
 ## Usage
@@ -18,7 +52,7 @@ openfec.init('your-api-key');
 
 ## Examples
 
-Note - additional examples can be found in the [examples](examples) directory.
+Note - additional examples can be found in the [examples](examples) directory. Not all functions are written into the API yet - I'm working on adding more of them, but further functions (available [here](https://api.open.fec.gov/developers)) can be easily extended.
 
 #### Get Candidate Details
 
